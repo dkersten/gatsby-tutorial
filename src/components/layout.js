@@ -8,12 +8,12 @@ import useSiteMetadata from '../hooks/use-sitemetadata';
 
 const Layout = ({ children }) => {
 
-    const { title, description } = useSiteMetadata();
+  const { title, description } = useSiteMetadata();
 
-    return (
-        <>
-            <Global
-                styles={css`
+  return (
+    <>
+      <Global
+        styles={css`
         * {
           box-sizing: border-box;
           margin: 0;
@@ -55,26 +55,26 @@ const Layout = ({ children }) => {
           margin-top: 0.25rem;
         }
       `}
-            />
+      />
 
-            <Helmet>
-                <html lang="en" />
-                <title>{title}</title>
-                <meta name="description" content={description} />
-            </Helmet>
+      <Helmet>
+        <html lang="en" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
 
-            <Header />
-            <main
-                css={css`
+      <Header />
+      <main
+        css={css`
         margin: 2rem auto;
         max-width: 90vw;
         width: 550px;
       `}
-            >
-                {children}
-            </main>
-        </>
-    )
+      >
+        {children}
+      </main>
+    </>
+  )
 };
 
 export default Layout;
